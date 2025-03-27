@@ -1,29 +1,17 @@
-15:09:26 **** Build of configuration Debug for project 3_gpio_bsrr ****
+13:12:20 **** Incremental Build of configuration Debug for project 3_gpio_bsrr ****
 make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DSTM32F446xx -c -I../Inc -I"D:/STM32_bare_metal_project/CHIP_headers/CMSIS/Device/ST/STM32F4xx/cmsis-device-f4/cmsis-device-f4-cdbad761857acedcdd07ece7939b4cb209ed826a/Include" -I"D:/STM32_bare_metal_project/CHIP_headers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c:15:31: error: unknown type name 'UART_TypeDef'; did you mean 'USART_TypeDef'?
-   15 | static void uart_set_baudrate(UART_TypeDef *USARTx,uint32_t PeriphClk, uint32_t Baudrate);
-      |                               ^~~~~~~~~~~~
-      |                               USART_TypeDef
-../Src/main.c: In function 'uart2_tx_init':
-../Src/main.c:49:9: warning: implicit declaration of function 'uart_set_baudrate' [-Wimplicit-function-declaration]
-   49 |         uart_set_baudrate(UART2,APBQ_CLK, UART_BAURDRATE);
-      |         ^~~~~~~~~~~~~~~~~
-../Src/main.c:49:27: error: 'UART2' undeclared (first use in this function); did you mean 'UART4'?
-   49 |         uart_set_baudrate(UART2,APBQ_CLK, UART_BAURDRATE);
-      |                           ^~~~~
-      |                           UART4
-../Src/main.c:49:27: note: each undeclared identifier is reported only once for each function it appears in
-../Src/main.c: At top level:
-../Src/main.c:68:31: error: unknown type name 'UART_TypeDef'; did you mean 'USART_TypeDef'?
-   68 | static void uart_set_baudrate(UART_TypeDef *USARTx,uint32_t PeriphClk, uint32_t Baudrate)
-      |                               ^~~~~~~~~~~~
-      |                               USART_TypeDef
-../Src/main.c:73:17: warning: 'compute_uart_bd' defined but not used [-Wunused-function]
-   73 | static uint16_t compute_uart_bd(uint32_t PeriphClk, uint32_t Baudrate)
-      |                 ^~~~~~~~~~~~~~~
-make: *** [Src/subdir.mk:25: Src/main.o] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DSTM32F446xx -c -I../Inc -I"D:/STM32_bare_metal_project/CHIP_headers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/STM32_bare_metal_project/CHIP_headers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "3_gpio_bsrr.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32_bare_metal_project\3_gpio_bsrr\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3_gpio_bsrr.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3_gpio_bsrr.elf
+ 
+arm-none-eabi-size  3_gpio_bsrr.elf 
+arm-none-eabi-objdump -h -S 3_gpio_bsrr.elf  > "3_gpio_bsrr.list"
+   text	   data	    bss	    dec	    hex	filename
+    792	      0	   1568	   2360	    938	3_gpio_bsrr.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3_gpio_bsrr.list
+ 
 
-15:09:27 Build Failed. 4 errors, 2 warnings. (took 1s.542ms)
+13:12:22 Build Finished. 0 errors, 0 warnings. (took 2s.130ms)
 
