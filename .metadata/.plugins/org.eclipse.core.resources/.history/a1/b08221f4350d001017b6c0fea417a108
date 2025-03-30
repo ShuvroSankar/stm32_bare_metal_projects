@@ -1,0 +1,45 @@
+#include <stdint.h>
+#include <stdio.h>
+#include <stm32f4xx.h>
+#include "uart.h"
+#define GPIOAEN			(1U<<0)
+#define GPIO_OTYPER_OT5	(1U<<5)
+#define TIM_CR1_CEN		(1U<<0)
+
+
+
+int main(void){
+//	enable clock access
+	RCC->AHB1ENR |= GPIOAEN;
+//	activate led pin
+	GPIOA->MODER |= (1U<<10);
+	GPIOA->MODER &= ~(1U<<11);
+//	push-pull
+	GPIOA->OTYPER &= ~GPIO_OTYPER_OT5;
+//	speed
+	GPIOA->OSPEEDR |= (1U<<10);
+	GPIOA->OSPEEDR |= (1U<<11);
+
+
+    uart_rxtx_init();
+    while(1){
+    	key = uart2_read();
+    	if(key == '1'){
+    		GPIOA->ODR |= LED_PIN;
+    	}else{
+    		GPIOA->ODR &= ~LED_PIN;
+    	}
+
+    }
+}
+
+void Delay_us(uint16_t us){
+	TIM2->CNT = 0;
+//	start timer
+	TIM2->CR1 |= TIM_CR1_CEN;
+	while(TIM->CR1<us){}
+//	stop timer
+	TIM2->CR1 &= ~TIM_CR1_CEN;
+}
+
+

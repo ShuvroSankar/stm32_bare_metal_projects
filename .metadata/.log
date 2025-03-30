@@ -536,3 +536,54 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.cdt.core 1 0 2025-03-29 14:26:01.717
 !MESSAGE Indexed '8_uart_rxtx' (0 sources, 0 headers) in 0.001 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-03-29 19:40:39.842
+!MESSAGE Indexed ' Project_dht22_data_read' (4 sources, 61 headers) in 1.4 sec: 2,892 declarations; 4,051 references; 6 unresolved inclusions; 30 syntax errors; 707 unresolved names (9.2%)
+!SESSION 2025-03-30 10:57:23.037 -----------------------------------------------
+eclipse.buildId=Version 1.18.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-03-30 10:57:34.247
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-03-30 10:57:34.248
+!MESSAGE Log4j2 initialized with config file D:\STM32_bare_metal_project\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-03-30 10:57:54.660
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.core.resources 4 77 2025-03-30 15:50:20.856
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2025-03-30 15:50:20.856
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2025-03-30 15:50:20.856
+!MESSAGE D:\STM32_bare_metal_project\ Project_dht22_data_read overlaps the location of another project: ' Project_dht22_data_read'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2025-03-30 15:50:20.856
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2025-03-30 16:02:32.025
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2025-03-30 16:02:32.025
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2025-03-30 16:02:32.025
+!MESSAGE D:\STM32_bare_metal_project\ Project_dht22_data_read overlaps the location of another project: ' Project_dht22_data_read'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2025-03-30 16:02:32.025
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2025-03-30 16:06:54.021
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2025-03-30 16:06:54.021
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2025-03-30 16:06:54.021
+!MESSAGE D:\STM32_bare_metal_project\ Project_dht22_data_read overlaps the location of another project: ' Project_dht22_data_read'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2025-03-30 16:06:54.021
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-03-30 16:10:34.823
+!MESSAGE Indexed 'DHT22_project' (3 sources, 53 headers) in 1.28 sec: 1,954 declarations; 2,863 references; 0 unresolved inclusions; 2 syntax errors; 2 unresolved names (0.042%)

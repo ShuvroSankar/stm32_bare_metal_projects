@@ -1,0 +1,4 @@
+../Src/main.c:17:5:main	48	static
+../Src/main.c:73:6:TIM2_Init	4	static
+../Src/main.c:81:6:Delay_us	16	static
+../Src/main.c:87:9:Read_DHT22_Byte	16	static

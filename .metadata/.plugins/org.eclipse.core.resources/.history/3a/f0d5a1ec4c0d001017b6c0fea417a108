@@ -1,0 +1,91 @@
+#include <stdint.h>
+#include <stdio.h>
+#include <stm32f4xx.h>
+#include "uart.h"
+#define GPIOAEN			(1U<<0)
+#define GPIO_OTYPER_OT5	(1U<<5)
+#define TIM_CR1_CEN		(1U<<0)
+#define GPIO_ODR_OD5	(1U<<5)
+#define GPIO_IDR_ID5	(1U<<5)
+#define UART2EN        (1U<<17
+
+void Delay_us(uint16_t us);
+
+
+int main(void){
+//	enable clock access
+	RCC->AHB1ENR |= GPIOAEN;
+//	activate led pin
+	GPIOA->MODER |= (1U<<10);
+	GPIOA->MODER &= ~(1U<<11);
+//	push-pull
+	GPIOA->OTYPER &= ~GPIO_OTYPER_OT5;
+//	speed
+	GPIOA->OSPEEDR |= (1U<<10);
+	GPIOA->OSPEEDR |= (1U<<11);
+
+
+//	Start Signal: Pull data line low for 1 ms, then high for 20–40 µs.
+//	send start signal
+	GPIOA->ODR &=~GPIO_ODR_OD5; //pull low
+	Delay_us(1000);  //1 ms delay
+	GPIOA->ODR |= GPIO_ODR_OD5; //pull high
+	Delay_us(30); // 30us delay
+
+//	DHT22 pulls low for 80 µs, then high for 80 µs.
+//	// Wait for DHT22 response
+	while(GPIOA->IDR & GPIO_IDR_ID5){}  // wait until low
+	while(!(GPIOA->IDR & GPIO_IDR_ID5)){} // wait until high
+
+//	Read Full Data Packet (5 bytes):
+
+//	Bytes: Humidity (high, low), Temperature (high, low), Checksum.
+	uint8_t data[5];
+	for (int i = 0; i < 5; i++) data[i] = Read_DHT22_Byte();
+//	Data Processing
+//	Calculate Temperature/Humidity:
+
+	float humidity = (data[0] << 8 | data[1]) / 10.0;
+	float temperature = (data[2] << 8 | data[3]) / 10.0;
+
+
+//    Configure USART2 (Nucleo's built-in ST-Link UART) to print data:
+	 // Enable clock for GPIOA
+	    RCC->AHB1ENR |= GPIOAEN;
+
+	    // Set PA2 mode to Alternate Function (AF)
+	    GPIOA->MODER |= (1U<<5);
+	    GPIOA->MODER &= ~(1U<<4);
+
+	    // Set PA2 Alternate Function to AF7 (USART2 TX)
+	    GPIOA->AFR[0] &= ~(0xF << 8); // Clear bits 8-11 for PA2
+	    GPIOA->AFR[0] |= (7U << 8);  // AF7 is 0111
+
+}
+
+void Delay_us(uint16_t us){
+	TIM2->CNT = 0;
+//	start timer
+	TIM2->CR1 |= TIM_CR1_CEN;
+	while(TIM->CR1<us){}
+//	stop timer
+	TIM2->CR1 &= ~TIM_CR1_CEN;
+}
+//	Read Data Bits:
+uint8_t Read_DHT22_Byte(){
+
+
+//	Each bit starts with a 50 µs low, followed by high for: 26–28 µs = '0' , 70 µs = '1'
+
+	uint8_t data = 0;
+	    for (int i = 0; i < 8; i++) {
+	        while (!(GPIOA->IDR & GPIO_IDR_ID5)); // Wait for high
+	        Delay_us(40); // Wait 40 µs to distinguish '0' vs '1'
+	        if (GPIOA->IDR & GPIO_IDR_ID5) data |= (1 << (7 - i));
+	        while (GPIOA->IDR & GPIO_IDR_ID5); // Wait for next bit
+	    }
+	    return data;
+}
+
+
+
