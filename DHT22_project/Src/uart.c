@@ -89,11 +89,13 @@ char uart2_read(void){
 }
 
 void uart2_write(int ch){
+	 GPIOA->ODR |= (1U << 5);  // Turn LED ON
     // Wait until transmit data register is empty
     while (!(USART2->SR & SR_TXE)) {}
 
     // Write to transmit data register
     USART2->DR = (ch & 0xFF);
+    GPIOA->ODR &= ~(1U << 5); // Turn LED OFF
 }
 
 // Set baud rate

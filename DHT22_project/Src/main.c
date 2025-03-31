@@ -5,9 +5,9 @@
 
 #define GPIOAEN        (1U << 0)
 #define DHT22_PIN      (1U << 5)
-#define LED_PIN        (1U << 5) // PA5 (optional LED)
+//#define LED_PIN        (1U << 5) // PA5 (optional LED)
 
-short unsigned int delay = 33920;
+short unsigned int delay = 2000000;
 
 char buffer[50];
 void TIM2_Init(void);
@@ -15,8 +15,11 @@ void Delay_us(uint16_t us);
 uint8_t Read_DHT22_Byte(void);
 
 int main(void) {
+
+
     // Initialize UART and Timer
     uart_rxtx_init(); // Initialize UART2 for TX/RX
+    printf("UART Initialized!\r\n");
     TIM2_Init();
 
     // Enable GPIOA clock
@@ -28,18 +31,22 @@ int main(void) {
     GPIOA->PUPDR &= ~(3 << 10);    // Disable internal pull-up
 
     while (1) {
-        // Send start signal to DHT22
-        GPIOA->ODR &= ~DHT22_PIN;      // Pull low
-        Delay_us(1000);                // 1 ms
-        GPIOA->ODR |= DHT22_PIN;       // Release bus
-        GPIOA->MODER &= ~(3 << 10);    // Switch PA5 to input
-        Delay_us(30);                  // Wait 30 µs
+        printf("Starting sensor read...\r\n"); // Add this line
 
-        // Wait for DHT22 response (with timeout)
+        // Send start signal to DHT22
+        GPIOA->ODR &= ~DHT22_PIN;
+        Delay_us(1000);
+        GPIOA->ODR |= DHT22_PIN;
+        GPIOA->MODER &= ~(3 << 10);
+        Delay_us(30);
+
+        printf("Waiting for sensor response...\r\n"); // Add this line
+
+        // Wait for DHT22 response
         uint32_t timeout = 1000000;
-        while ((GPIOA->IDR & DHT22_PIN) && timeout--); // Wait until low
+        while ((GPIOA->IDR & DHT22_PIN) && timeout--);
         if (!timeout) {
-            printf("Sensor error!\r\n");
+            printf("Sensor error: No response!\r\n"); // Enhanced error message
             continue;
         }
         timeout = 1000000;
@@ -55,7 +62,7 @@ int main(void) {
             continue;
         }
 
-        // Calculate values
+//         Calculate values
         int humidity = data[0] << 8 | data[1]; // e.g., 625 = 62.5%
         int temperature = data[2] << 8 | data[3]; // e.g., 234 = 23.4°C
 

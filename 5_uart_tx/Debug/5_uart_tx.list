@@ -125,7 +125,7 @@ void uart_tx_init(void){
  800023a:	6013      	str	r3, [r2, #0]
 
     // Set PA2 Alternate Function to AF7 (USART2 TX)
-    GPIOA->AFR[0] |= (7U << 8);
+    GPIOA->AFR[0] |= (7U << 8);  // AF7 is 0111
  800023c:	4b10      	ldr	r3, [pc, #64]	@ (8000280 <uart_tx_init+0x6c>)
  800023e:	6a1b      	ldr	r3, [r3, #32]
  8000240:	4a0f      	ldr	r2, [pc, #60]	@ (8000280 <uart_tx_init+0x6c>)

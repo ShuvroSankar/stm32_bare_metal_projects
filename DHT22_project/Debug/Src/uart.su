@@ -3,5 +3,5 @@
 ../Src/uart.c:58:6:uart_tx_init	8	static
 ../Src/uart.c:83:6:uart2_read	4	static
 ../Src/uart.c:91:6:uart2_write	16	static
-../Src/uart.c:100:6:uart_set_baudrate	24	static
-../Src/uart.c:104:17:calculate_uart_bd	16	static
+../Src/uart.c:102:6:uart_set_baudrate	24	static
+../Src/uart.c:106:17:calculate_uart_bd	16	static
