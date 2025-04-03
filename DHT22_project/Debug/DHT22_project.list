@@ -434,14 +434,13 @@ void Delay_us(uint16_t us) {
  80004ae:	f04f 4380 	mov.w	r3, #1073741824	@ 0x40000000
  80004b2:	2200      	movs	r2, #0
  80004b4:	625a      	str	r2, [r3, #36]	@ 0x24
-    while (TIM2->CNT < us);
+    while (TIM2->CNT < us);}
  80004b6:	bf00      	nop
  80004b8:	f04f 4380 	mov.w	r3, #1073741824	@ 0x40000000
  80004bc:	6a5a      	ldr	r2, [r3, #36]	@ 0x24
  80004be:	88fb      	ldrh	r3, [r7, #6]
  80004c0:	429a      	cmp	r2, r3
  80004c2:	d3f9      	bcc.n	80004b8 <Delay_us+0x14>
-}
  80004c4:	bf00      	nop
  80004c6:	bf00      	nop
  80004c8:	370c      	adds	r7, #12

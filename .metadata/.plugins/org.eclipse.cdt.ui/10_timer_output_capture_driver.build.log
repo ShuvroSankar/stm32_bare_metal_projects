@@ -1,0 +1,10 @@
+13:49:09 **** Incremental Build of configuration Debug for project 10_timer_output_capture_driver ****
+make -j8 all 
+arm-none-eabi-size  10_timer_output_capture_driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+    904	      0	   1568	   2472	    9a8	10_timer_output_capture_driver.elf
+Finished building: default.size.stdout
+ 
+
+13:49:09 Build Finished. 0 errors, 0 warnings. (took 215ms)
+

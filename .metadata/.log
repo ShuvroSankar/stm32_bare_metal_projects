@@ -767,3 +767,57 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-03-31 20:32:22.189
 !MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2025-04-02 21:56:44.798 -----------------------------------------------
+eclipse.buildId=Version 1.18.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-04-02 21:56:55.131
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-04-02 21:56:55.133
+!MESSAGE Log4j2 initialized with config file D:\STM32_bare_metal_project\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-04-02 21:57:14.965
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-04-02 22:03:16.809
+!MESSAGE Indexed '9_genarel_timer' (6 sources, 63 headers) in 3.16 sec: 2,941 declarations; 3,986 references; 6 unresolved inclusions; 30 syntax errors; 707 unresolved names (9.3%)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2025-04-02 23:11:32.418
+!MESSAGE Won't launch debug session since we failed to locate the binary.
+!SESSION 2025-04-03 11:41:40.169 -----------------------------------------------
+eclipse.buildId=Version 1.18.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-04-03 11:41:55.465
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-04-03 11:41:55.467
+!MESSAGE Log4j2 initialized with config file D:\STM32_bare_metal_project\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-04-03 11:42:23.593
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-04-03 12:04:44.759
+!MESSAGE Indexed '10_timer_output_capture_driver' (7 sources, 65 headers) in 1.8 sec: 2,947 declarations; 4,100 references; 6 unresolved inclusions; 30 syntax errors; 707 unresolved names (9.1%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-04-03 13:41:48.218
+!MESSAGE Indexed '10_timer_output_capture_drive' (0 sources, 0 headers) in 0.001 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-04-03 13:41:58.471
+!MESSAGE Indexed '9_genarel_timer' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-04-03 13:42:07.871
+!MESSAGE Indexed '10_timer_output_capture_driver' (5 sources, 66 headers) in 0.941 sec: 3,449 declarations; 5,752 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.022%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-04-03 20:11:37.114
+!MESSAGE Indexed '10_timer_output_compare_driver' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-04-03 20:12:16.314
+!MESSAGE Indexed '11_timer_input_capture_driver' (5 sources, 62 headers) in 0.677 sec: 2,889 declarations; 4,031 references; 6 unresolved inclusions; 30 syntax errors; 707 unresolved names (9.3%)

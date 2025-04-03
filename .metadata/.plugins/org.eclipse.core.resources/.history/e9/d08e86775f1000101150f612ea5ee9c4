@@ -1,0 +1,19 @@
+#include <stdint.h>
+#include <stdio.h>
+#include <stm32f4xx.h>
+#include "uart.h"
+#include "timer.h"
+
+#define LED_PIN			(1U<<5)
+#define TIMx_SR_UIF		(1U<<0)
+
+int main(void){
+
+	tim2_pa5_output_compare();
+    while(1){
+
+    }
+}
+
+
+
