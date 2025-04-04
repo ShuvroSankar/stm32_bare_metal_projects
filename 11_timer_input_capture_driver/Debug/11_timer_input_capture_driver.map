@@ -993,10 +993,10 @@ LOAD C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_macro   0x00019643       0x16 ./Src/main.o
  .debug_macro   0x00019659      0x104 ./Src/timer.o
 
-.debug_line     0x00000000      0xd2a
- .debug_line    0x00000000      0x6ad ./Src/main.o
- .debug_line    0x000006ad      0x602 ./Src/timer.o
- .debug_line    0x00000caf       0x7b ./Startup/startup_stm32f446retx.o
+.debug_line     0x00000000      0xd2c
+ .debug_line    0x00000000      0x6af ./Src/main.o
+ .debug_line    0x000006af      0x602 ./Src/timer.o
+ .debug_line    0x00000cb1       0x7b ./Startup/startup_stm32f446retx.o
 
 .debug_str      0x00000000    0x8ed51
  .debug_str     0x00000000    0x8ed51 ./Src/main.o
