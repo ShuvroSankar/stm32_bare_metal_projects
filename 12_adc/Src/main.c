@@ -2,14 +2,19 @@
 #include <stdio.h>
 #include <stm32f4xx.h>
 #include "uart.h"
+#include "adc.h"
 
 
-
+uint32_t sensor_value;
 
 int main(void){
     uart_tx_init();
+    pal_adc_init();
+    start_convertion();
+
     while(1){
-        printf("How are you....\r\n");
+    	sensor_value = adc_read();
+        printf("Sensor Value: %d\r\n",(int)sensor_value);
     }
 }
 

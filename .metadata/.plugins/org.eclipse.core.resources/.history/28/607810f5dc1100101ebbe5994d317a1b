@@ -1,0 +1,11 @@
+#include "adc.h"
+
+#define GPIOAENR			(1U<<0)
+
+void pal_adc_init(void){
+//	enable clock access
+ RCC->AHB1ENR = GPIOAENR;
+// set the mode of PA1 to analog
+
+
+}
