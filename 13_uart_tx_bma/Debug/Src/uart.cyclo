@@ -1,5 +1,7 @@
-../Src/uart.c:17:5:__io_putchar	1
-../Src/uart.c:24:6:uart_tx_init	1
-../Src/uart.c:49:6:uart2_write	2
-../Src/uart.c:58:6:uart_set_baudrate	1
-../Src/uart.c:62:17:calculate_uart_bd	1
+D:/STM32_bare_metal_project/CHIP_headers/CMSIS/Include/core_cm4.h:1684:22:__NVIC_EnableIRQ	2
+../Src/uart.c:25:5:__io_putchar	1
+../Src/uart.c:66:6:dma1_stream6_init	2
+../Src/uart.c:101:6:uart_tx_init	1
+../Src/uart.c:126:6:uart2_write	2
+../Src/uart.c:135:6:uart_set_baudrate	1
+../Src/uart.c:139:17:calculate_uart_bd	1

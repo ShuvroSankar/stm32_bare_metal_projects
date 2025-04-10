@@ -1,0 +1,72 @@
+23:51:26 **** Incremental Build of configuration Debug for project 13_uart_tx_bma ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DSTM32F446xx -c -I../Inc -I"D:/STM32_bare_metal_project/CHIP_headers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/STM32_bare_metal_project/CHIP_headers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DSTM32F446xx -c -I../Inc -I"D:/STM32_bare_metal_project/CHIP_headers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/STM32_bare_metal_project/CHIP_headers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/uart.d" -MT"Src/uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/uart.o"
+In file included from ../Src/uart.c:1:
+../Inc/uart.h:13: warning: "DMA_HIFCR_CTCIF6" redefined
+   13 | #define DMA_HIFCR_CTCIF6        (1U<<21)
+      | 
+In file included from D:/STM32_bare_metal_project/CHIP_headers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:156,
+                 from ../Inc/uart.h:6:
+D:/STM32_bare_metal_project/CHIP_headers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:6301: note: this is the location of the previous definition
+ 6301 | #define DMA_HIFCR_CTCIF6         DMA_HIFCR_CTCIF6_Msk
+      | 
+../Src/uart.c:12: warning: "DMA_SxCR_EN" redefined
+   12 | #define DMA_SxCR_EN             (1U<<0)
+      | 
+D:/STM32_bare_metal_project/CHIP_headers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:6050: note: this is the location of the previous definition
+ 6050 | #define DMA_SxCR_EN              DMA_SxCR_EN_Msk
+      | 
+../Src/uart.c:13: warning: "DMA_SxCR_CHSEL" redefined
+   13 | #define DMA_SxCR_CHSEL  (1U<<27)
+      | 
+D:/STM32_bare_metal_project/CHIP_headers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:5981: note: this is the location of the previous definition
+ 5981 | #define DMA_SxCR_CHSEL           DMA_SxCR_CHSEL_Msk
+      | 
+../Src/uart.c:14: warning: "DMA_SxCR_MINC" redefined
+   14 | #define DMA_SxCR_MINC   (1U<<10)
+      | 
+D:/STM32_bare_metal_project/CHIP_headers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:6021: note: this is the location of the previous definition
+ 6021 | #define DMA_SxCR_MINC            DMA_SxCR_MINC_Msk
+      | 
+../Src/uart.c:15: warning: "DMA_SxCR_DIR" redefined
+   15 | #define DMA_SxCR_DIR    (1U<<16)
+      | 
+D:/STM32_bare_metal_project/CHIP_headers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:6030: note: this is the location of the previous definition
+ 6030 | #define DMA_SxCR_DIR             DMA_SxCR_DIR_Msk
+      | 
+../Src/uart.c:16: warning: "DMA_SxCR_TCIE" redefined
+   16 | #define DMA_SxCR_TCIE   (1U<<14)
+      | 
+In file included from ../Src/main.c:4:
+../Inc/uart.h:13: warning: "DMA_HIFCR_CTCIF6" redefined
+   13 | #define DMA_HIFCR_CTCIF6        (1U<<21)
+      | 
+D:/STM32_bare_metal_project/CHIP_headers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:6038: note: this is the location of the previous definition
+ 6038 | #define DMA_SxCR_TCIE            DMA_SxCR_TCIE_Msk
+      | 
+../Src/uart.c:18: warning: "USART_CR3_DMAT" redefined
+   18 | #define USART_CR3_DMAT  (1U<<7)
+      | 
+D:/STM32_bare_metal_project/CHIP_headers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:13846: note: this is the location of the previous definition
+13846 | #define USART_CR3_DMAT                USART_CR3_DMAT_Msk                       /*!<DMA Enable Transmitter      */
+      | 
+In file included from D:/STM32_bare_metal_project/CHIP_headers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:156,
+                 from ../Src/main.c:3:
+D:/STM32_bare_metal_project/CHIP_headers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:6301: note: this is the location of the previous definition
+ 6301 | #define DMA_HIFCR_CTCIF6         DMA_HIFCR_CTCIF6_Msk
+      | 
+arm-none-eabi-gcc -o "13_uart_tx_bma.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32_bare_metal_project\13_uart_tx_bma\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="13_uart_tx_bma.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 13_uart_tx_bma.elf
+ 
+arm-none-eabi-size  13_uart_tx_bma.elf 
+arm-none-eabi-objdump -h -S 13_uart_tx_bma.elf  > "13_uart_tx_bma.list"
+   text	   data	    bss	    dec	    hex	filename
+   1328	      0	   1568	   2896	    b50	13_uart_tx_bma.elf
+Finished building: default.size.stdout
+ 
+Finished building: 13_uart_tx_bma.list
+ 
+
+23:51:28 Build Finished. 0 errors, 8 warnings. (took 2s.464ms)
+

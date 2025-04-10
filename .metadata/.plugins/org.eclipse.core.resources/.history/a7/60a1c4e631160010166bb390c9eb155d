@@ -1,0 +1,19 @@
+#include <stdint.h>
+#include <stdio.h>
+#include <stm32f4xx.h>
+#include "uart.h"
+
+
+
+
+int main(void){
+	char message[21] = "Hello from stm32 DMA transfer\n\r";
+    uart_tx_init();
+    dma1_stream6_init();
+    while(1){
+
+    }
+}
+
+
+

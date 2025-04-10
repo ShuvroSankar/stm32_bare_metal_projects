@@ -1,0 +1,26 @@
+#include <stdint.h>
+#include <stdio.h>
+#include <stm32f4xx.h>
+#include "uart.h"
+
+#define GPIOAEN			(1U<<0)
+
+
+int main(void){
+	char message[31] = "Hello from stm32 DMA transfer\n\r";
+	RCC->AHB1ENR |= GPIOAEN;
+    uart_tx_init();
+    dma1_stream6_init((uint32_t) message, (uint32_t) &USART2, 31);
+    while(1){
+
+    }
+}
+
+static void uart_callback(){
+
+}
+
+void DMA_Stream6_IRQHandler(void){
+
+}
+
