@@ -20,8 +20,6 @@ int main(void){
     while(1){
 
         printf("A second passed \r\n");
-        GPIOA->ODR |= LED_PIN;
-        systicDelayMs(1000);
     }
 }
 

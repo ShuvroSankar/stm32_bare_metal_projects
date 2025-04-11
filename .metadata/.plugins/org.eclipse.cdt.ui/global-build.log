@@ -1,4 +1,4 @@
-23:41:13 **** Incremental Build of configuration Debug for project 14_SystTck ****
+23:52:20 **** Incremental Build of configuration Debug for project 14_SystTck ****
 make -j8 all 
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DSTM32F446xx -c -I../Inc -I"D:/STM32_bare_metal_project/CHIP_headers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/STM32_bare_metal_project/CHIP_headers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
 arm-none-eabi-gcc -o "14_SystTck.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32_bare_metal_project\14_SystTck\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="14_SystTck.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -7,7 +7,7 @@ Finished building target: 14_SystTck.elf
 arm-none-eabi-size  14_SystTck.elf 
 arm-none-eabi-objdump -h -S 14_SystTck.elf  > "14_SystTck.list"
    text	   data	    bss	    dec	    hex	filename
-   3712	     92	   1900	   5704	   1648	14_SystTck.elf
+   3824	     92	   1900	   5816	   16b8	14_SystTck.elf
 Finished building: default.size.stdout
  
 Finished building: 14_SystTck.list
